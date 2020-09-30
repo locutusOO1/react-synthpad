@@ -44,8 +44,8 @@ const lightState = {
         color: '#87FF65',
       }
     ]
-  }
-  const darkState = {
+}
+const darkState = {
     mode: 'dark',
     notes: [
       {
@@ -89,14 +89,15 @@ const lightState = {
         color: '#03cea4',
       }
     ]
-  }
+}
 
 const AppContext = createContext(lightState);
 const { Provider } = AppContext;
 
 const reducer = (state, action) => {
     switch(action.type) {
-        case:
+        case 'TOGGLE_MODE':
+              return action.payload === 'light' ? lightState : darkState;
         default:
             return state;
     }
